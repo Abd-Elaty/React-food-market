@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Categories from './components/Categories'
 import './styles/App.scss'
+import { useState } from 'react'
 
 const foods = [
   {category:'Fruits', price:'5$', stocked:true, name:'Apple', image:'/src/assets/Apple.png'},
@@ -12,12 +13,22 @@ const foods = [
 ]
 
 function App() {
+  let [filt, setFilt] = useState(false)
+  const [search, setSearch] = useState('')
   return (
     <>
-      <Header/>
-      <Categories Foods={foods}/>
+      <Header filt={filt} setFilt={setFilt} search={search} setSearch={setSearch}/>
+      <Categories Foods={foods} filt={filt} search={search}/>
     </>
   )
 }
 
 export default App
+
+// const arr = [1,2,3,4,5];
+// arr.forEach(ele => {
+//   if (ele == 2){
+//     return;
+//   }
+//   console.log(ele)
+// }); 

@@ -1,27 +1,45 @@
+import { useState } from 'react';
 import '../styles/category.scss'
 
-function Categories ({Foods}) {
+function Categories ({Foods, filt, search}) {
   const categories = []
-  Foods.forEach(e => {
-    categories.push(e.category)
+  Foods.forEach(
+    (e) => {
+      if (e.name.toLowerCase().indexOf(search.toLowerCase()) == -1){
+        return
+      }
+      if (filt == true){
+        if(e.stocked == true) {
+          categories.push(e.category)
+        }
+      }else {
+        categories.push(e.category)
+      }
   });
   let foodTypes = [...new Set(categories)];
   const cats =[]
   foodTypes.forEach(e => {
-    cats.push(<Category key={e} myCat={e} Foods={Foods}/>)
+    cats.push(<Category key={e} myCat={e} Foods={Foods} filt={filt} search={search}/>)
   })
   return (
     <div className="categories">
-      {cats}
+      {cats || <p>n</p>}
     </div>
   )
 }
 
-function Category ({myCat, Foods}) {
+function Category ({myCat, Foods, filt, search}) {
   const els = [];
   Foods.forEach((el)=> {
-    if (el.category == myCat) {
-      els.push(<Element key={el.name} el={el}/>)
+    if (search !== '' && el.name.toLowerCase().indexOf(search.toLowerCase()) == -1 ){
+      return
+    }
+    if (el.category == myCat ) {
+      if (filt == true && el.stocked == true){
+        els.push(<Element key={el.name} el={el}/>)
+      }else if(filt == false){
+        els.push(<Element key={el.name} el={el}/>)
+      }
     }
   })
   return(
@@ -55,4 +73,13 @@ function Element ({el}) {
     </>
   )
 }
+
+function NotFound () {
+  return (
+    <h1>
+      NO Products Found
+    </h1>
+  )
+}
+
 export default Categories
