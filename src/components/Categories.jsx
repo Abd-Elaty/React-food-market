@@ -1,3 +1,4 @@
+import '../styles/category.scss'
 
 function Categories ({Foods}) {
   const categories = []
@@ -10,9 +11,9 @@ function Categories ({Foods}) {
     cats.push(<Category key={e} myCat={e} Foods={Foods}/>)
   })
   return (
-    <>
+    <div className="categories">
       {cats}
-    </>
+    </div>
   )
 }
 
@@ -24,8 +25,10 @@ function Category ({myCat, Foods}) {
     }
   })
   return(
-    <div id={myCat} >
-      <h2>{myCat}</h2>
+    <div className='category' >
+      <h2>
+        <span>{myCat}</span>
+      </h2>
       <div className="elements">
         {els}
       </div>
@@ -43,8 +46,11 @@ function Element ({el}) {
   return (
     <>
       <div className={cn}>
-        <span>{el.name}</span>
-        <span>{el.price}</span>
+        <img src={el.image} alt={el.name} />
+        <div className='disc'>
+          <span>{el.name}</span>
+          <span>{el.price}</span>
+        </div>
       </div>
     </>
   )

@@ -1,0 +1,34 @@
+.categories {
+  .category {
+    padding: 40px 0 90px;
+    margin: 40px 0 80px;
+    background-color: #eee;
+    border-radius: 15px;
+    h2 {
+      margin-bottom: 35px;
+      span {
+        display: inline-block;
+        background-color: #fff;
+        padding: 5px 58px;
+        border-radius: 25px;
+        max-width: 85%;
+        box-sizing: border-box;
+        border-bottom: 2px solid #2fd4e5;
+        @media (max-width:290px) {
+          padding: 5px 15px;
+        }
+      }
+    }
+  }
+  .elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 18px;
+      max-width: 85%;
+    }
+  }
+}
