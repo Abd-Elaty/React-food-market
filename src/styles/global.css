@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   /* place-items: center; */
   min-height: 100vh;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -9,6 +9,13 @@ body {
 
 #root {
   margin: 0 auto;
+  max-width: 1250px;
   padding: 2rem;
   text-align: center;
+}
+
+@media (max-width:290px) {
+  #root {
+    padding: 8px;
+  }
 }
