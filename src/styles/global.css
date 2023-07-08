@@ -5,12 +5,12 @@ body {
   line-height: 1.5;
 }
 
-#root {
+/* #root {
   margin: 0 auto;
   max-width: 1250px;
   padding: 0 15px;
   text-align: center;
-}
+} */
 
 @media (max-width:290px) {
   #root {

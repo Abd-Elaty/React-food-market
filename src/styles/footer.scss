@@ -1,0 +1,19 @@
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  place-items: center;
+  background-color: rgb(41, 39, 39);
+  padding: 11px 0 5px;
+  font-weight: bold;
+  color: #fff;
+  a {
+    display: block;
+  }
+  img {
+    width: 25px;
+    height: 25px;
+    margin: 6px;
+    border-radius: 5px;
+  }
+}
