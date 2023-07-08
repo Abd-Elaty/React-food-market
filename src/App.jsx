@@ -37,10 +37,3 @@ function App() {
 
 export default App
 
-// const arr = [1,2,3,4,5];
-// arr.forEach(ele => {
-//   if (ele == 2){
-//     return;
-//   }
-//   console.log(ele)
-// }); 
