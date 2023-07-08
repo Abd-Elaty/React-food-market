@@ -7,7 +7,7 @@ import { useState } from 'react'
 const foods = [
   {category:'Fruits', price:'5$', stocked:true, name:'Apple', image:'/src/assets/Apple.png'},
   {category:'Fruits', price:'10$', stocked:false, name:'Star Fruit', image:'/src/assets/starfruit.png'},
-  {category:'Fruits', price:'3$', stocked:true, name:'StarFruit', image:'/src/assets/strawberry.png'},
+  {category:'Fruits', price:'3$', stocked:true, name:'Strawberry', image:'/src/assets/strawberry.png'},
   {category:'Vegetables', price:'8$', stocked:true, name:'Potato', image:'/src/assets/Potato.png'},
   {category:'Fruits', price:'7$', stocked:true, name:'Abricot', image:'/src/assets/Abricot.png'},
   {category:'Vegetables', price:'3$', stocked:true, name:'Spinach', image:'/src/assets/Spinach.png'},
