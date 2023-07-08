@@ -1,7 +1,17 @@
 .categories {
+  .not {
+    padding: 25px;
+    background-color: #eee;
+    margin-top: 70px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    max-width: 85%;
+  }
   .category {
-    padding: 40px 0 90px;
-    margin: 40px 0 80px;
+    padding: 40px 0 40px;
+    margin: 40px 0 40px;
     background-color: #fff;
     border-radius: 15px;
     h2 {
@@ -24,11 +34,63 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    > div {
+      background-color: #eee;
+      padding: 10px 0 0 0;
+      border-radius: 10px;
+      margin: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
     img {
       width: 150px;
       height: 150px;
       border-radius: 18px;
       max-width: 85%;
+    }
+    .disc{
+      padding: 3px;
+      margin: 6px;
+      p {
+        margin:2px ;
+        color: #333;
+        &:first-child {
+        font-weight: 600;
+        }
+        &:nth-child(2) {
+          color: green;
+        }
+        &.btn {
+          background-color: rgb(23, 24, 23);
+          cursor: pointer;
+          border-radius: 15px;
+          color: #eee;
+        }
+      }
+    }
+    .unavilable {
+      position: relative;
+      overflow: hidden;
+      p {
+        &:nth-child(2){
+          text-decoration: line-through;
+        }
+        color: #333;
+        &:last-child {
+          background-color: #aaa;
+        }
+      }
+      &::before {
+        content: 'Out of stock';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgb(203, 28, 4);
+        padding: 2px 5px;
+        font-size: 13px;
+        color: #eee;
+        font-weight: bold;
+        border-radius: 0 0 0 7px;
+      }
     }
   }
 }

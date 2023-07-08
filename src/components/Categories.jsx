@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import '../styles/category.scss'
 
 function Categories ({Foods, filt, search}) {
@@ -21,13 +20,17 @@ function Categories ({Foods, filt, search}) {
   foodTypes.forEach(e => {
     cats.push(<Category key={e} myCat={e} Foods={Foods} filt={filt} search={search}/>)
   })
+  const not = cats.length
   return (
     <div className="categories">
-      {cats || <p>n</p>}
+      {cats}
+      <div className="not" >
+        {!not && <NotFound/>}
+      </div>
     </div>
   )
 }
-
+  
 function Category ({myCat, Foods, filt, search}) {
   const els = [];
   Foods.forEach((el)=> {
@@ -66,8 +69,9 @@ function Element ({el}) {
       <div className={cn}>
         <img src={el.image} alt={el.name} />
         <div className='disc'>
-          <span>{el.name}</span>
-          <span>{el.price}</span>
+          <p>{el.name}</p>
+          <p>price: {el.price}</p>
+          <p className='btn'>buy</p>
         </div>
       </div>
     </>
@@ -76,9 +80,9 @@ function Element ({el}) {
 
 function NotFound () {
   return (
-    <h1>
+    <h2 id='NotFound'>
       NO Products Found
-    </h1>
+    </h2>
   )
 }
 

@@ -4,13 +4,20 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  background-color: #7e244a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   .filter {
     display: flex;
     place-items: center;
-    margin-top: 25px;
+    margin: 15px 0;
     p {
     margin: 0 0 0 15px;
     text-align: left;
+    color: #fff;
     }
   }
   > input {
@@ -19,11 +26,10 @@
     color: #706c6c;
     font-size: 18px;
     line-height: 25px;
-    background-color: #eee;
     padding: 5px 15px;
     border: 1px solid #ccc;
     max-width: 85%;
-    margin-top: 25px;
+    margin: 15px 0;
     position: relative;
     &:focus {
       border: 2px solid #2291f3;
